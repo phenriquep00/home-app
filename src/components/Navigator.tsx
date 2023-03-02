@@ -7,7 +7,7 @@ export function Navigator() {
     const {currentPage, setCurrentPage} = useContext(CurrentPageContext);
 
   return (
-    <nav className="fixed flex bg-zinc-800 items-center justify-center w-full h-[12%] bottom-0 border-t border-t-zinc-500 rounded">
+    <nav className="fixed flex bg-zinc-800 items-center justify-center w-full h-14 bottom-0 border-t border-t-zinc-500 rounded">
       <ul className="flex justify-evenly w-full">
         <li>
           <button onClick={() => setCurrentPage("home")} className="flex items-center justify-center">
