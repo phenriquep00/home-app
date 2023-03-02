@@ -1,10 +1,12 @@
 import './App.css'
+import { Content } from './components/Content'
+import { Navigator } from './components/Navigator'
 
 function App() {
   return (
-    <div className="App">
-      <h1>Site da casa</h1>
-      <h2>Vo faze ainda kk</h2>
+    <div className="flex flex-1 flex-col text-slate-200 bg-zinc-900 w-screen h-screen">
+      <Content />
+      <Navigator />
     </div>
   )
 }
