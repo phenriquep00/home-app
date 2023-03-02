@@ -1,6 +1,7 @@
-import './App.css'
-import { Content } from './components/Content'
-import { Navigator } from './components/Navigator'
+import { useEffect } from "react";
+import "./App.css";
+import { Content } from "./components/Content";
+import { Navigator } from "./components/Navigator";
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       <Content />
       <Navigator />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
