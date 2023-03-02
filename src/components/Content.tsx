@@ -7,7 +7,7 @@ export function Content() {
   const { currentPage, setCurrentPage } = useContext(CurrentPageContext);
 
   return (
-    <main className="flex w-screen h-screen mb-14 items-center justify-center">
+    <main className="flex w-screen bg-gradient-to-b from-zinc-800 via-zinc-500 to-zinc-900 h-screen mb-14 items-center justify-center">
       {currentPage === "groceries" ? (
         <Groceries />
       ) : currentPage === "home" ? (
