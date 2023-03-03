@@ -26,7 +26,7 @@ export function AddGroceryInput({
       setName("");
       setAmount(1);
 
-      forceUpdateHook(forceUpdate++);
+      forceUpdateHook(forceUpdate + 1);
     }
   };
 
