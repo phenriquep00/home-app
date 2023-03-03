@@ -1,15 +1,33 @@
 import { Plus } from "phosphor-react";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { supabase } from "../pages/supabaseClient";
 
-export function AddGroceryInput() {
+interface IAddGroceryInput {
+  forceUpdate: number;
+  forceUpdateHook: Dispatch<SetStateAction<number>>;
+}
+
+export function AddGroceryInput({
+  forceUpdate,
+  forceUpdateHook,
+}: IAddGroceryInput) {
   const [name, setName] = useState<string>("");
   const [amount, setAmount] = useState<number>(1);
 
   const addNewGrocery = async (_name: string, _amount: number) => {
-    await supabase
-      .from("groceries-list")
-      .insert({ name: _name, amount: _amount });
+    try {
+      await supabase
+        .from("groceries-list")
+        .insert({ name: _name, amount: _amount })
+        .then(() => null);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setName("");
+      setAmount(1);
+
+      forceUpdateHook(forceUpdate++);
+    }
   };
 
   return (

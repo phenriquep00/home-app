@@ -2,7 +2,11 @@ import { Key, useEffect, useState } from "react";
 import { supabase } from "../pages/supabaseClient";
 import { GroceryItem } from "./GroceryItem";
 
-export function GroceryList() {
+interface IGroceryList {
+  forceUpdate: number;
+}
+
+export function GroceryList({forceUpdate}: IGroceryList) {
   const [groceryList, setGroceryList] = useState<any>(null);
 
   const fetchGroceryList = async () => {
@@ -16,7 +20,7 @@ export function GroceryList() {
 
   useEffect(() => {
     fetchGroceryList();
-  }, []);
+  }, [forceUpdate]);
 
   /* useEffect(() => {console.log(groceryList)}, [groceryList]) */
 
